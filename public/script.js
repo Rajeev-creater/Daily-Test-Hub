@@ -52,6 +52,9 @@ menuBtn.onclick = () => {
 closeBtn.onclick = () => {
   sidebar.style.left = "-300px";
 };
+document.getElementById("closeResultBtn").onclick = () => {
+  document.getElementById("resultModal").style.display = "none";
+};
 
 shareBtn.onclick = () => {
   const text = "Check out Rajeev's Study Hub - Free MCQ tests for Class 9-12 with AI doubt solver!";
@@ -66,7 +69,188 @@ shareBtn.onclick = () => {
 rateBtn.onclick = () => {
   alert("Thanks for your interest! Rate us on Google Play or App Store!");
 };
-  
+  4
+// AI Widget Setup
+function setupAIWidget() {
+  const widget = document.getElementById("aiWidget");
+  const expandBtn = document.getElementById("expandAiBtn");
+  const closeBtn = document.getElementById("closeAiBtn");
+  const aiChat = document.getElementById("aiChat");
+  let offsetX, offsetY;
+
+  expandBtn.onclick = () => {
+    aiChat.style.display = aiChat.style.display === "none" ? "flex" : "none";
+    expandBtn.style.display = aiChat.style.display === "none" ? "block" : "none";
+    closeBtn.style.display = aiChat.style.display === "none" ? "none" : "block";
+  };
+
+  closeBtn.onclick = () => {
+    aiChat.style.display = "none";
+    expandBtn.style.display = "block";
+  };
+
+  // Draggable functionality
+  widget.ondragstart = (e) => {
+    offsetX = e.clientX - widget.offsetLeft;
+    offsetY = e.clientY - widget.offsetTop;
+  };
+
+  document.ondragover = (e) => {
+    e.preventDefault();
+  };
+
+  document.ondrop = (e) => {
+    e.preventDefault();
+    widget.style.left = (e.clientX - offsetX) + "px";
+    widget.style.top = (e.clientY - offsetY) + "px";
+  };
+
+  // Send message
+  document.getElementById("aiSendBtn").onclick = sendAIMessage;
+}
+
+function sendAIMessage() {
+  const input = document.getElementById("aiInput");
+  const message = input.value.trim();
+  if (message) {
+    // Add to chat history
+    addMessageToChat(message, "user");
+    input.value = "";
+    // Call AI API
+    askAI(message);
+  }
+}
+
+function addMessageToChat(message, type) {
+  const messagesDiv = document.getElementById("aiMessages");
+  const msg = document.createElement("div");
+  msg.className = `ai-message ${type}`;
+  msg.textContent = message;
+  messagesDiv.appendChild(msg);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+// AI Widget Setup
+function setupAIWidget() {
+  const widget = document.getElementById("aiWidget");
+  const expandBtn = document.getElementById("expandAiBtn");
+  const closeBtn = document.getElementById("closeAiBtn");
+  const aiChat = document.getElementById("aiChat");
+  let offsetX, offsetY;
+
+  expandBtn.onclick = () => {
+    aiChat.style.display = aiChat.style.display === "none" ? "flex" : "none";
+    expandBtn.style.display = aiChat.style.display === "none" ? "block" : "none";
+    closeBtn.style.display = aiChat.style.display === "none" ? "none" : "block";
+  };
+
+  closeBtn.onclick = () => {
+    aiChat.style.display = "none";
+    expandBtn.style.display = "block";
+  };
+
+  // Draggable functionality
+  widget.ondragstart = (e) => {
+    offsetX = e.clientX - widget.offsetLeft;
+    offsetY = e.clientY - widget.offsetTop;
+  };
+
+  document.ondragover = (e) => {
+    e.preventDefault();
+  };
+
+  document.ondrop = (e) => {
+    e.preventDefault();
+    widget.style.left = (e.clientX - offsetX) + "px";
+    widget.style.top = (e.clientY - offsetY) + "px";
+  };
+
+  // Send message
+  document.getElementById("aiSendBtn").onclick = sendAIMessage;
+}
+
+function sendAIMessage() {
+  const input = document.getElementById("aiInput");
+  const message = input.value.trim();
+  if (message) {
+    // Add to chat history
+    addMessageToChat(message, "user");
+    input.value = "";
+    // Call AI API
+    askAI(message);
+  }
+}
+
+function addMessageToChat(message, type) {
+  const messagesDiv = document.getElementById("aiMessages");
+  const msg = document.createElement("div");
+  msg.className = `ai-message ${type}`;
+  msg.textContent = message;
+  messagesDiv.appendChild(msg);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+setupAIWidget();
+// AI Widget Setup
+function setupAIWidget() {
+  const widget = document.getElementById("aiWidget");
+  const expandBtn = document.getElementById("expandAiBtn");
+  const closeBtn = document.getElementById("closeAiBtn");
+  const aiChat = document.getElementById("aiChat");
+  let offsetX, offsetY;
+
+  expandBtn.onclick = () => {
+    aiChat.style.display = aiChat.style.display === "none" ? "flex" : "none";
+    expandBtn.style.display = aiChat.style.display === "none" ? "block" : "none";
+    closeBtn.style.display = aiChat.style.display === "none" ? "none" : "block";
+  };
+
+  closeBtn.onclick = () => {
+    aiChat.style.display = "none";
+    expandBtn.style.display = "block";
+  };
+
+  // Draggable functionality
+  widget.ondragstart = (e) => {
+    offsetX = e.clientX - widget.offsetLeft;
+    offsetY = e.clientY - widget.offsetTop;
+  };
+
+  document.ondragover = (e) => {
+    e.preventDefault();
+  };
+
+  document.ondrop = (e) => {
+    e.preventDefault();
+    widget.style.left = (e.clientX - offsetX) + "px";
+    widget.style.top = (e.clientY - offsetY) + "px";
+  };
+
+  // Send message
+  document.getElementById("aiSendBtn").onclick = sendAIMessage;
+}
+
+function sendAIMessage() {
+  const input = document.getElementById("aiInput");
+  const message = input.value.trim();
+  if (message) {
+    // Add to chat history
+    addMessageToChat(message, "user");
+    input.value = "";
+    // Call AI API
+    askAI(message);
+  }
+}
+
+function addMessageToChat(message, type) {
+  const messagesDiv = document.getElementById("aiMessages");
+  const msg = document.createElement("div");
+  msg.className = `ai-message ${type}`;
+  msg.textContent = message;
+  messagesDiv.appendChild(msg);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+setupAIWidget();
   },
   हिंदी: {
     selectClass: "📚 अपनी कक्षा चुनें",
