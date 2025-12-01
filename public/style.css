@@ -822,6 +822,204 @@ body {
   letter-spacing: 1px;
 }
 
+.result-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.result-close-btn:hover {
+  background: #ff6666;
+  transform: scale(1.1);
+}.nav-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.submit-right {
+  margin-left: auto;
+  background: #4CAF50 !important;
+  color: white;
+  font-weight: bold;
+}
+
+.submit-right:hover {
+  background: #45a049 !important;
+  transform: scale(1.05);
+}
+
+.ai-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background: #1e1e2e;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  animation: slideInUp 0.5s ease;
+  draggable: true;
+}
+
+.expand-ai-btn {
+  width: 100%;
+  padding: 12px;
+  background: #8B4789;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+.ai-chat {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  background: #1e1e2e;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.ai-messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ai-message {
+  padding: 8px 12px;
+  border-radius: 6px;
+  max-width: 80%;
+}
+
+.ai-message.user {
+  background: #4CAF50;
+  color: white;
+  align-self: flex-end;
+}
+
+.ai-message.bot {
+  background: #555;
+  color: white;
+  align-self: flex-start;
+}
+
+.ai-input-box {
+  display: flex;
+  gap: 8px;
+}
+
+.ai-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #3d3e5f;
+  background: #2a2a3a;
+  color: white;
+  border-radius: 4px;
+}
+
+.ai-send-btn {
+  padding: 8px 12px;
+  background: #8B4789;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes slideRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+/* Apply animations to elements */
+.selection-card {
+  animation: slideInUp 0.5s ease;
+}
+
+.result-card {
+  animation: slideInUp 0.5s ease 0.5s both;
+}
+
+.ai-widget {
+  animation: slideInUp 0.5s ease;
+}
+
+.ai-send-btn:hover {
+  animation: pulse 0.5s ease;
+}
+
+
 .retake-btn {
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   padding: 12px 30px;
