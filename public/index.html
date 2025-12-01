@@ -22,6 +22,26 @@
   </div>
 </div>
 
+  <!-- AI Widget -->
+<div id="aiWidget" class="ai-widget">
+  <button id="expandAiBtn" class="expand-ai-btn">🤖 Mahadev AI</button>
+  <button id="closeAiBtn" class="close-ai-btn" style="display:none;">✕</button>
+  
+  <div id="aiChat" class="ai-chat" style="display:none;">
+    <div class="ai-messages" id="aiMessages"></div>
+    <div class="ai-input-box">
+      <input id="aiInput" type="text" placeholder="Type your doubt..." class="ai-input" />
+      <button id="aiSendBtn" class="ai-send-btn">Ask</button>
+    </div>
+  </div>
+</div>
+  
+  <div class="nav-footer">
+  <button id="prevBtn" class="nav-btn" data-text="previous"></button>
+  <button id="nextBtn" class="nav-btn" data-text="next"></button>
+  <button id="submitBtn" class="nav-btn submit-right" data-text="submit" style="margin-left: auto;"></button>
+  </div>
+  
 <!-- Header with Menu Button -->
 <div class="header">
   <button id="menuBtn" class="menu-btn">☰</button>
