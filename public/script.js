@@ -37,6 +37,36 @@ const TRANSLATIONS = {
     addStudyTime: "Add Study Time", hours: "Hours", minutes: "Minutes",
     addTime: "Add Time", cancel: "Cancel", error: "Error loading questions",
     todayStudyTime: "Today's Study Time", chatHistory: "Chat History", delete: "Delete"
+  
+      // Sidebar Menu Functionality
+const sidebar = document.getElementById("sidebar");
+const menuBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeSidebarBtn");
+const shareBtn = document.getElementById("shareBtn");
+const rateBtn = document.getElementById("rateBtn");
+
+menuBtn.onclick = () => {
+  sidebar.style.left = "0";
+};
+
+closeBtn.onclick = () => {
+  sidebar.style.left = "-300px";
+};
+
+shareBtn.onclick = () => {
+  const text = "Check out Rajeev's Study Hub - Free MCQ tests for Class 9-12 with AI doubt solver!";
+  const url = "https://daily-test-hub-1.onrender.com";
+  if (navigator.share) {
+    navigator.share({ title: "Rajeev Study Hub", text: text, url: url });
+  } else {
+    alert(text + "\n\n" + url);
+  }
+};
+
+rateBtn.onclick = () => {
+  alert("Thanks for your interest! Rate us on Google Play or App Store!");
+};
+  
   },
   हिंदी: {
     selectClass: "📚 अपनी कक्षा चुनें",
